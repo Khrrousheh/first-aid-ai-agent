@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "first-aid-ai-agent"
+version = "0.1.0"
+description = "Final capstone project for the AI Practitioner course"
+authors = ["Mahdi Khrrousheh <mahdi.khrrousheh@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+streamlit = "^1.50.0"
+pillow = "^11.3.0"
+google-genai = "^1.43.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
