@@ -1,0 +1,73 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+dist/
+build/
+wheels/
+*.log
+
+# ---- Poetry ----
+# Virtual environment (if created inside the project)
+.venv/
+# Poetry lock and config files you may want to ignore locally
+poetry.toml
+# Uncomment the next line if you want to ignore Poetry’s lockfile (not recommended for reproducibility)
+# poetry.lock
+
+# ---- Streamlit ----
+.streamlit/
+.streamlit/secrets.toml
+
+# ---- Environment / Credentials ----
+.env
+.env.*
+*.env
+*.key
+*.json  # service account or API keys
+secrets.toml
+
+# ---- IDE / Editor ----
+.vscode/
+.idea/
+.idea/*
+*.sublime-project
+*.sublime-workspace
+
+# ---- OS / System ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Jupyter / Notebooks ----
+.ipynb_checkpoints/
+*.ipynb_save
+*.nbconvert.ipynb
+
+# ---- Caches ----
+.cache/
+.pytest_cache/
+.mypy_cache/
+coverage/
+htmlcov/
+__pycache__/
+
+# ---- Data / Temporary Files ----
+data/
+datasets/
+tmp/
+temp/
+*.tmp
+*.bak
+
+# ---- Other ----
+*.db
+*.sqlite3
+*.lock
