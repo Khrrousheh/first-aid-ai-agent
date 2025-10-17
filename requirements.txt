@@ -1,3 +1,7 @@
-streamlit==1.50.0
-pillow==11.3.0
-google-genai==1.43.0
+streamlit
+pandas
+pillow
+google-generativeai
+streamlit-folium
+geopy
+pandas-stubs
