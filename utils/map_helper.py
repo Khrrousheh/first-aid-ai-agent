@@ -6,41 +6,20 @@ import re
 
 def find_nearby_facilities(location_query: str):
     """
-    Finds nearby healthcare facilities using Gemini's Search grounding tool
-    based on a text-based location query (e.g., "Austin, TX").
-
-    Args:
-        location_query (str): User's input location.
-    Returns:
-        str: Formatted text with hospital names and addresses.
+    Finds nearby healthcare facilities using Gemini based on a location query.
     """
     try:
-        # 1. Configure Gemini with API key
         genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-
-        # 2. Choose a grounded model (supports search)
         model = genai.GenerativeModel("gemini-1.5-flash")
 
-        # 3. Define the prompt and instructions
-        system_prompt = (
+        prompt = (
             "You are a helpful emergency assistant. "
-            "Use Google Search to find the top 3 nearest public or general hospitals near the user's requested location. "
-            "Return results as a numbered list with the hospital name and full address."
+            "Find the top 3 nearest public or general hospitals near the user's requested location. "
+            "Return results as a numbered list with the hospital name and full address.\n\n"
+            f"User location: {location_query}"
         )
 
-        user_query = (
-            f"Find the 3 closest hospitals near: {location_query}. "
-            "Provide only the hospital name and full address, formatted as a numbered list."
-        )
-
-        # 4. Generate response with Google Search tool
-        response = model.generate_content(
-            user_query,
-            tools=[{"google_search": {}}],
-            system_instruction=system_prompt
-        )
-
-        # 5. Return the formatted text (Gemini grounding returns plain text)
+        response = model.generate_content(prompt)
         if hasattr(response, "text") and response.text:
             return response.text.strip()
         else:
