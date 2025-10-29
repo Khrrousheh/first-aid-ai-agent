@@ -7,8 +7,8 @@ genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 # Use current recommended model names/aliases
 # The 'gemini-2.5-flash' model is multimodal, handling both vision and text.
-VISION_MODEL = "gemini-2.5-flash"
-TEXT_MODEL = "gemini-2.5-flash"
+VISION_MODEL = "gemini-1.5-flash-latest"
+TEXT_MODEL = "gemini-1.5-flash-latest"
 
 
 def analyze_image(uploaded_file):
