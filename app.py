@@ -642,9 +642,6 @@ if page == "First Aid Guide":
                 else:
                     # Original mode
                     steps = generate_first_aid_steps(injury_description, return_structured=False)
-                st.success("✅ First aid advice ready.")
-                st.markdown("### 🩹 First Aid Steps")
-                st.write(steps)
                 
                 # Always show medical disclaimer
                 st.markdown("---")
